@@ -13,6 +13,7 @@ class Extractword:
         self.path = './test_papers'
 
     def extractword(self, content):
+        '''시험지에서 영단어를 추출'''
         ext = re.sub("[^a-z\n\ -]","", content[1])
         ext = re.sub(" +", " ", ext).split('\n')
         ext = [word for word in ext if word != ' ' and word != '']
@@ -26,7 +27,7 @@ class Extractword:
             self.answersheet += ext
 
     def readPDF(self):
-        
+        '''test_papers 폴더에서 파일을 읽어 들임'''
         listdir = os.listdir(self.path)
         
         print("** File list **")
@@ -38,7 +39,6 @@ class Extractword:
                 self.extractword(fileReader)
         print("Length of sheet: ", len(self.answersheet))
         self.save()       
-
     
     def save(self):
         if self.answersheet or len(self.answersheet) > 80:  # answersheet가 비어있지 않다면 / 그리고 
@@ -46,7 +46,6 @@ class Extractword:
             df.to_csv('answersheet.csv', index=False, header=False)
             
             print("To extract word is complete.")
-
 
 
 if __name__ == '__main__':
