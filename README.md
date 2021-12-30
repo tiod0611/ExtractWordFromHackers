@@ -28,7 +28,7 @@ $ python ./Extractwords.py
 
 ### 3. Result
 
-완성된 결과물은 해당 폴더에 __answersheet.csv __로 만들어 짐
+완성된 결과물은 해당 폴더에 __answersheet.csv __ 로 만들어 짐
 
 
 
