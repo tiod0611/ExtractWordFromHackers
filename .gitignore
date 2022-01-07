@@ -32,7 +32,7 @@ Temporary Items
 .apdisk
 
 *.ipynb
-/*.pdf
+/test_papers/*.pdf
 *.csv
 test_papers/It_doesn't_mean_anyting.txt
 
