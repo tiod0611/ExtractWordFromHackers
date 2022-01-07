@@ -10,17 +10,18 @@ class Extractword:
         self.sheetKor = []
 
         self.path = './test_papers'
-        self.stop = ['Powered by TCPDF wwwtcpdforg']
+        self.stop = ['Powered by TCPDF wwwtcpdforg','A B', 'B A']
 
     def extractword(self, content):
         '''시험지에서 영단어를 추출'''
 
         # Extract english words
-        extEng = re.sub("[0-9]", "\n", content[1])
-        extEng = re.sub("[^A-Za-z\n\ -]","", extEng)
-        extEng = re.sub(" +", " ", extEng).split('\n')
+        extEng = re.sub("[0-9]", "", content[1])
+        extEng = re.sub(" {5,}", "`", extEng)
+        extEng = re.sub("[^`A-Za-z\ -]","", extEng)
+        extEng = re.sub(" +", " ", extEng).split('`')
         extEng = [word.rstrip(' ') for word in extEng if word != ' ' and word != '' and word not in self.stop]
-        extEng = list(filter(None, extEng))[2:]
+        extEng = list(filter(None, extEng))[1:]
 
         extKor = re.sub("[0-9]", "==", content[0])
         extKor = re.sub("[^가-힣AB ,\;==]","", extKor)
