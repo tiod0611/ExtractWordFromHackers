@@ -31,9 +31,9 @@ Network Trash Folder
 Temporary Items
 .apdisk
 
-.ipynb
-.pdf
-.csv
+*.ipynb
+/*.pdf
+*.csv
 test_papers/It_doesn't_mean_anyting.txt
 
 # End of https://www.toptal.com/developers/gitignore/api/macos
