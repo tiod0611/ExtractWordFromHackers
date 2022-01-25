@@ -18,13 +18,13 @@ class Extractword:
         # Extract english words
         extEng = re.sub("[0-9]", "", content[1])
         extEng = re.sub(" {5,}", "`", extEng)
-        extEng = re.sub("[^`A-Za-z\ -]","", extEng)
+        extEng = re.sub("[^`A-Za-z\ '-]","", extEng)
         extEng = re.sub(" +", " ", extEng).split('`')
         extEng = [word.rstrip(' ') for word in extEng if word != ' ' and word != '' and word not in self.stop]
         extEng = list(filter(None, extEng))[1:]
 
         extKor = re.sub("[0-9]", "==", content[0])
-        extKor = re.sub("[^가-힣AB ,\;==]","", extKor)
+        extKor = re.sub("[^가-힣AB∙ ,\()\;~==]","", extKor)
         extKor = re.sub(" +", " ", extKor).split('==')
         extKor = list(filter(None, extKor))[4:]
 
