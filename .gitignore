@@ -33,6 +33,7 @@ Temporary Items
 
 *.ipynb
 /test_papers/*.pdf
+/error_case/*.pdf
 *.csv
 
 # End of https://www.toptal.com/developers/gitignore/api/macos
